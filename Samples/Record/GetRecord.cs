@@ -401,7 +401,7 @@ namespace Samples.Record
 				new Initializer.Builder().Environment(environment).Token(token).Initialize();
 				string moduleAPIName = "Leads";
 				long recordId = 44024000774074l;
-				string destinationFolder = "/Users/zohocrm-java-sdk-sample/file";
+				string destinationFolder = "/Users/zohocrm-csharp-sdk-sample/file";
                 GetRecord_1(moduleAPIName, recordId, destinationFolder);
 			}
 			catch (Exception e)

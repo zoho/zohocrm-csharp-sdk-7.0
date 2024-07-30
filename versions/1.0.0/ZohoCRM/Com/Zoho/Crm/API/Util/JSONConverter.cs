@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -255,15 +256,21 @@ namespace Com.Zoho.Crm.API.Util
             {
                 foreach (KeyValuePair<string,JToken> keyDetail in moduleDetail)
                 {
-                    JObject keyDetails = (JObject)keyDetail.Value;
-                    string name = (string)keyDetails[Constants.NAME];
-                    if (keyDetails.ContainsKey(Constants.REQUIRED) && (bool)keyDetails[Constants.REQUIRED])
+                    if(keyDetail.Value != null && keyDetail.Value.Type != JTokenType.Null)
                     {
-                        requiredKeys[name] = true;
-                    }
-                    if (keyDetails.ContainsKey(Constants.PRIMARY) && (bool)keyDetails[Constants.PRIMARY])
-                    {
-                        primaryKeys[name] = true;
+                        JObject keyDetails = (JObject)keyDetail.Value;
+                        if(keyDetails.ContainsKey(Constants.NAME))
+                        {
+                            string name = (string)keyDetails[Constants.NAME];
+                            if (keyDetails.ContainsKey(Constants.REQUIRED) && (bool)keyDetails[Constants.REQUIRED])
+                            {
+                                requiredKeys[name] = true;
+                            }
+                            if (keyDetails.ContainsKey(Constants.PRIMARY) && (bool)keyDetails[Constants.PRIMARY])
+                            {
+                                primaryKeys[name] = true;
+                            }
+                        }
                     }
                 }
                 foreach (KeyValuePair<string, JToken> keyDetail in classDetail)
@@ -297,11 +304,17 @@ namespace Com.Zoho.Crm.API.Util
                 {
                     if (moduleDetail.ContainsKey(keyName))
                     {
-                        keyDetail = (JObject)moduleDetail[keyName];// incase of user spec json
+                        if(moduleDetail[keyName].HasValues)
+                        {
+                            keyDetail = (JObject)moduleDetail[keyName];// incase of user spec json
+                        }   
                     }
                     else
                     {
-                        keyDetail = (JObject)moduleDetail[memberName];// json details
+                        if (moduleDetail[memberName].HasValues)
+                        {
+                            keyDetail = (JObject)moduleDetail[memberName];// json details
+                        }
                     }
                 }
                 else if (classDetail.ContainsKey(memberName))
@@ -328,6 +341,10 @@ namespace Com.Zoho.Crm.API.Util
                     }
                     else
                     {
+                        if (keyDetail.Count == 0)
+                        {
+                            customHandling = true;
+                        }
                         if (customHandling && !(keyValue is IList)  && !(keyValue is IDictionary) && !(keyValue.GetType().FullName.Contains(Constants.CHOICE_NAMESPACE))) 
 					    {
                             if (Constants.PRIMITIVE_TYPES.Contains(keyValue.GetType().Name))
@@ -662,11 +679,17 @@ namespace Com.Zoho.Crm.API.Util
                 {
                     if (moduleDetail.ContainsKey(keyName))
                     {
-                        keyDetail = (JObject)moduleDetail[keyName];// incase of user spec json
+                        if(moduleDetail[keyName].HasValues)
+                        {
+                            keyDetail = (JObject)moduleDetail[keyName];// incase of user spec json
+                        }
                     }
                     else
                     {
-                        keyDetail = (JObject)moduleDetail[memberName];// json details
+                        if (moduleDetail[memberName].HasValues)
+                        {
+                            keyDetail = (JObject)moduleDetail[memberName];// json details
+                        }
                     }
                 }
                 else if (recordDetail.ContainsKey(memberName))

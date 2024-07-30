@@ -9,17 +9,17 @@ This file gives a brief of the enhancements and/or bug fixes in the latest versi
 ----------------
 Enhancements
 ----------------
-    - JAVA SDK upgraded to support v7 APIs.
-    - JAVA SDK improved to support the following new APIs
+    - C# SDK upgraded to support v7 APIs.
+    - C# SDK improved to support the following new APIs
 
-      - [Export Audit Log API]()
-      - [Cadence API]()
-      - [Users Re-invite API]()
-      - [Record Clone API]()
-      - [Duplicate Record Check API]()
-      - [Data Enrichment API]()
-      - [Mass Delete Tags API]()
-      - [Picklist Option API]()
-      - [API Fetcher]()
+      - Export Audit Log API
+      - Cadence API
+      - Users Re-invite API
+      - Record Clone API
+      - Duplicate Record Check API
+      - Data Enrichment API
+      - Mass Delete Tags API
+      - Picklist Option API
+      - API Fetcher
 
 You can also take a look at our GitHub page here (https://github.com/zoho/zohocrm-csharp-sdk-7.0/blob/master/README.md)
