@@ -28,7 +28,7 @@ namespace Com.Zoho.Crm.API.Util
         private static Dictionary<string, string> apiTypeVsDataType = new Dictionary<string, string>();
         private static Dictionary<string, string> apiTypeVsStructureName = new Dictionary<string, string>();
         private static bool newFile = false;
-	    private static bool getModifiedModules = false;
+	private static bool getModifiedModules = false;
         private static bool forceRefresh = false;
         private static string moduleAPIName;
         private static JObject apiSupportedModule = new JObject();
