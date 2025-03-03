@@ -25,6 +25,10 @@ License
 
 ## Latest Version
 
+- [4.0.0](/versions/4.0.0/README.md)
+
+    - Updated the CADataCenter Accounts URL
+
 - [3.0.0](/versions/3.0.0/README.md)
 
     - Handle "text/plain" content type as file download.
@@ -67,7 +71,7 @@ You can include the SDK to your project using:
     - Package Manager
 
         ```sh
-        Install-Package ZOHOCRMSDK-7.0 -Version 3.0.0
+        Install-Package ZOHOCRMSDK-7.0 -Version 4.0.0
         Install-Package MySql.Data -Version 6.9.12
         Install-Package Newtonsoft.Json -Version 13.0.1
         ```
@@ -75,7 +79,7 @@ You can include the SDK to your project using:
     - .NET  CLI
 
         ```sh
-        dotnet add package ZOHOCRMSDK-7.0 --version 3.0.0
+        dotnet add package ZOHOCRMSDK-7.0 --version 4.0.0
         dotnet add package Newtonsoft.Json --version 13.0.1
         dotnet add package MySql.Data --version 6.9.12
         ```
@@ -86,7 +90,7 @@ You can include the SDK to your project using:
 
         ```sh
         <ItemGroup>
-            <PackageReference Include="ZOHOCRMSDK-7.0" Version="3.0.0" />
+            <PackageReference Include="ZOHOCRMSDK-7.0" Version="4.0.0" />
             <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
             <PackageReference Include="MySql.Data" Version="6.9.12" />
         </ItemGroup>
@@ -106,4 +110,4 @@ For example, if you generate the tokens for your Sandbox environment in the CN d
 
 ---
 
-For more details, kindly refer [here](/versions/3.0.0/ZohoCRM/README.md).
+For more details, kindly refer [here](/versions/4.0.0/ZohoCRM/README.md).
