@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Com.Zoho.Crm.API.Holidays
 {
 
-	public class APIException : Model, ResponseHandler, ActionHandler, ActionResponse, ResonseHandler
+	public class APIException : Model, ResponseHandler, ActionHandler, ActionResponse
 	{
 		private Choice<string> status;
 		private Choice<string> code;

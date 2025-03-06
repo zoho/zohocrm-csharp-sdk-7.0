@@ -94,7 +94,7 @@ namespace Samples.PickListValues
 				IToken token = new OAuthToken.Builder().ClientId("Client_Id").ClientSecret("Client_Secret").RefreshToken("Refresh_Token").RedirectURL("Redirect_URL" ).Build();
 				new Initializer.Builder().Environment(environment).Token(token).Initialize();
 				string moduleAPIName = "Leads";
-				long fieldId = 3477061000000002619;
+				long fieldId = 3477062619;
                 GetPickListValues_1(fieldId, moduleAPIName);
 			}
 			catch (Exception e)

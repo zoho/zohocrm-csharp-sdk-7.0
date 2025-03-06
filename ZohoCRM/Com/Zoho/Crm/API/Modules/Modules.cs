@@ -69,7 +69,7 @@ namespace Com.Zoho.Crm.API.Modules
 		private List<RelatedLists.RelatedList> relatedLists;
 		private bool? filterStatus;
 		private RelatedListProperties relatedListProperties;
-		private string displayField;
+		private object displayField;
 		private List<object> layouts;
 		private List<ModuleFields> fields;
 		private CustomViews.CustomViews customView;
@@ -1220,17 +1220,17 @@ namespace Com.Zoho.Crm.API.Modules
 			}
 		}
 
-		public string DisplayField
+		public object DisplayField
 		{
 			/// <summary>The method to get the displayField</summary>
-			/// <returns>string representing the displayField</returns>
+			/// <returns>object representing the displayField</returns>
 			get
 			{
 				return  this.displayField;
 
 			}
 			/// <summary>The method to set the value to displayField</summary>
-			/// <param name="displayField">string</param>
+			/// <param name="displayField">object</param>
 			set
 			{
 				 this.displayField=value;

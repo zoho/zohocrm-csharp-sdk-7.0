@@ -55,7 +55,7 @@ namespace Com.Zoho.Crm.API.Util
         public static readonly string LOG_FILE_NAME = "sdk_logs.log";
         public static readonly string TOKEN_FILE = "sdk_tokens.txt";
         public static readonly string ZOHO_SDK = "X-ZOHO-SDK";
-        public static readonly string SDK_VERSION = "4.0.0";
+        public static readonly string SDK_VERSION = "5.0.0";
         public static readonly string MODULEPACKAGENAME = "modulePackageName";
         public static readonly string MODULEDETAILS = "moduleDetails";
         public static readonly string DATATYPECONVERTER = "Com.Zoho.Crm.API.Util.DataTypeConverter`1[[$type]], ZOHOCRMSDK-7.0";

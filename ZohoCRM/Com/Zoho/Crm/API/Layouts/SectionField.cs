@@ -34,6 +34,7 @@ namespace Com.Zoho.Crm.API.Layouts
 		private List<StaticValues> staticValues;
 		private bool? staticField;
 		private List<Fields.LayoutAssociation> layoutAssociations;
+		private Delete1 delete;
 		private Modules.MinifiedModule associatedModule;
 		private string dataType;
 		private Fields.OperationType operationType;
@@ -80,7 +81,7 @@ namespace Com.Zoho.Crm.API.Layouts
 		private Fields.Private private1;
 		private Fields.ConvertMapping convertMapping;
 		private Fields.AutoNumber autonumber;
-		private Fields.AutoNumber autoNumber70;
+		private Fields.AutoNumber autoNumber71;
 		private Fields.Crypt crypt;
 		private Fields.Tooltip tooltip;
 		private Fields.HistoryTracking historyTracking;
@@ -589,6 +590,26 @@ namespace Com.Zoho.Crm.API.Layouts
 				 this.layoutAssociations=value;
 
 				 this.keyModified["layout_associations"] = 1;
+
+			}
+		}
+
+		public Delete1 Delete
+		{
+			/// <summary>The method to get the delete</summary>
+			/// <returns>Instance of Delete1</returns>
+			get
+			{
+				return  this.delete;
+
+			}
+			/// <summary>The method to set the value to delete</summary>
+			/// <param name="delete">Instance of Delete1</param>
+			set
+			{
+				 this.delete=value;
+
+				 this.keyModified["_delete"] = 1;
 
 			}
 		}
@@ -1513,20 +1534,20 @@ namespace Com.Zoho.Crm.API.Layouts
 			}
 		}
 
-		public Fields.AutoNumber AutoNumber70
+		public Fields.AutoNumber AutoNumber71
 		{
-			/// <summary>The method to get the autoNumber70</summary>
+			/// <summary>The method to get the autoNumber71</summary>
 			/// <returns>Instance of AutoNumber</returns>
 			get
 			{
-				return  this.autoNumber70;
+				return  this.autoNumber71;
 
 			}
-			/// <summary>The method to set the value to autoNumber70</summary>
-			/// <param name="autoNumber70">Instance of AutoNumber</param>
+			/// <summary>The method to set the value to autoNumber71</summary>
+			/// <param name="autoNumber71">Instance of AutoNumber</param>
 			set
 			{
-				 this.autoNumber70=value;
+				 this.autoNumber71=value;
 
 				 this.keyModified["auto_number"] = 1;
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Com.Zoho.Crm.API.Cadences
 {
 
-	public class APIException : Model
+	public class APIException : Model, ResponseHandler
 	{
 		private Dictionary<string, object> details;
 		private Choice<string> code;

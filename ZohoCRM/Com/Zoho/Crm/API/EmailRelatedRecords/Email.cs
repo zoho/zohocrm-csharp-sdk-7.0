@@ -9,7 +9,7 @@ namespace Com.Zoho.Crm.API.EmailRelatedRecords
 	public class Email : Model
 	{
 		private List<Attachments> attachments;
-		private long? threadId;
+		private string threadId;
 		private List<UserDetails> cc;
 		private string summary;
 		private Users.MinifiedUser owner;
@@ -56,17 +56,17 @@ namespace Com.Zoho.Crm.API.EmailRelatedRecords
 			}
 		}
 
-		public long? ThreadId
+		public string ThreadId
 		{
 			/// <summary>The method to get the threadId</summary>
-			/// <returns>long? representing the threadId</returns>
+			/// <returns>string representing the threadId</returns>
 			get
 			{
 				return  this.threadId;
 
 			}
 			/// <summary>The method to set the value to threadId</summary>
-			/// <param name="threadId">long?</param>
+			/// <param name="threadId">string</param>
 			set
 			{
 				 this.threadId=value;

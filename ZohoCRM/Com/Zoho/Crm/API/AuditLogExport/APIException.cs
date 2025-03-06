@@ -11,6 +11,8 @@ namespace Com.Zoho.Crm.API.AuditLogExport
 		private string message;
 		private Choice<string> status;
 		private Dictionary<string, int?> keyModified=new Dictionary<string, int?>();
+		private string xError;
+		private string info;
 
 		public Choice<string> Code
 		{
@@ -115,6 +117,46 @@ namespace Com.Zoho.Crm.API.AuditLogExport
 			 this.keyModified[key] = modification;
 
 
+		}
+
+		public string XError
+		{
+			/// <summary>The method to get the xError</summary>
+			/// <returns>string representing the xError</returns>
+			get
+			{
+				return  this.xError;
+
+			}
+			/// <summary>The method to set the value to xError</summary>
+			/// <param name="xError">string</param>
+			set
+			{
+				 this.xError=value;
+
+				 this.keyModified["x-error"] = 1;
+
+			}
+		}
+
+		public string Info
+		{
+			/// <summary>The method to get the info</summary>
+			/// <returns>string representing the info</returns>
+			get
+			{
+				return  this.info;
+
+			}
+			/// <summary>The method to set the value to info</summary>
+			/// <param name="info">string</param>
+			set
+			{
+				 this.info=value;
+
+				 this.keyModified["info"] = 1;
+
+			}
 		}
 
 

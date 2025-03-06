@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Com.Zoho.Crm.API.UsersTerritories
 {
 
-	public class SuccessResponse : Model, ActionResponse, TransferActionResponse
+	public class SuccessResponse : Model, ActionResponse
 	{
 		private Choice<string> code;
 		private string message;

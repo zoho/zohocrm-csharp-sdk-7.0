@@ -32,7 +32,7 @@ namespace Samples.Notes
 			parentRecord.Id = 34770617255001;
             MinifiedModule module = new MinifiedModule();
             module.APIName = "Leads";
-            module.Id = 347706000002175;
+            module.Id = 347702175;
             parentRecord.Module = module;
             note.ParentId = parentRecord;
 			notes.Add (note);

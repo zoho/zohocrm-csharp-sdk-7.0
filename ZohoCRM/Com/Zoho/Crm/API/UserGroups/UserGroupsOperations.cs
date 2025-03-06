@@ -247,8 +247,9 @@ namespace Com.Zoho.Crm.API.UserGroups
 		}
 
 		/// <summary>The method to get associated users count</summary>
+		/// <param name="paramInstance">Instance of ParameterMap</param>
 		/// <returns>Instance of APIResponse<ResponseHandler></returns>
-		public APIResponse<ResponseHandler> GetAssociatedUsersCount()
+		public APIResponse<ResponseHandler> GetAssociatedUsersCount(ParameterMap paramInstance)
 		{
 			CommonAPIHandler handlerInstance=new CommonAPIHandler();
 
@@ -261,6 +262,37 @@ namespace Com.Zoho.Crm.API.UserGroups
 			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_GET;
 
 			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_ACTION;
+
+			handlerInstance.Param=paramInstance;
+
+			return handlerInstance.APICall<ResponseHandler>(typeof(ResponseHandler), "application/json");
+
+
+		}
+
+		/// <summary>The method to get associate groups of user</summary>
+		/// <param name="user">long?</param>
+		/// <param name="paramInstance">Instance of ParameterMap</param>
+		/// <returns>Instance of APIResponse<ResponseHandler></returns>
+		public APIResponse<ResponseHandler> GetAssociateGroupsOfUser(long? user, ParameterMap paramInstance)
+		{
+			CommonAPIHandler handlerInstance=new CommonAPIHandler();
+
+			string apiPath="";
+
+			apiPath=string.Concat(apiPath, "/crm/v7/users/");
+
+			apiPath=string.Concat(apiPath, user.ToString());
+
+			apiPath=string.Concat(apiPath, "/actions/associated_groups");
+
+			handlerInstance.APIPath=apiPath;
+
+			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_GET;
+
+			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_READ;
+
+			handlerInstance.Param=paramInstance;
 
 			return handlerInstance.APICall<ResponseHandler>(typeof(ResponseHandler), "application/json");
 
@@ -313,6 +345,22 @@ namespace Com.Zoho.Crm.API.UserGroups
 			public static readonly Param<string> USER_TYPE=new Param<string>("user_type", "com.zoho.crm.api.UserGroups.GetSourcesParam");
 			public static readonly Param<string> PAGE=new Param<string>("page", "com.zoho.crm.api.UserGroups.GetSourcesParam");
 			public static readonly Param<string> PER_PAGE=new Param<string>("per_page", "com.zoho.crm.api.UserGroups.GetSourcesParam");
+		}
+
+
+		public static class GetAssociatedUsersCountParam
+		{
+			public static readonly Param<string> PAGE=new Param<string>("page", "com.zoho.crm.api.UserGroups.GetAssociatedUsersCountParam");
+			public static readonly Param<string> PER_PAGE=new Param<string>("per_page", "com.zoho.crm.api.UserGroups.GetAssociatedUsersCountParam");
+			public static readonly Param<Criteria> FILTERS=new Param<Criteria>("filters", "com.zoho.crm.api.UserGroups.GetAssociatedUsersCountParam");
+		}
+
+
+		public static class GetAssociateGroupsOfUserParam
+		{
+			public static readonly Param<string> INCLUDE=new Param<string>("include", "com.zoho.crm.api.UserGroups.GetAssociateGroupsOfUserParam");
+			public static readonly Param<string> PAGE=new Param<string>("page", "com.zoho.crm.api.UserGroups.GetAssociateGroupsOfUserParam");
+			public static readonly Param<string> PER_PAGE=new Param<string>("per_page", "com.zoho.crm.api.UserGroups.GetAssociateGroupsOfUserParam");
 		}
 
 

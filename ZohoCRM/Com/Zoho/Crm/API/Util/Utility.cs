@@ -645,13 +645,14 @@ namespace Com.Zoho.Crm.API.Util
 	    {
             JObject apiNames = new JObject();
 		    HeaderMap headerMap = new HeaderMap();
-		    if(header != null)
+            ParameterMap paramMap = new ParameterMap();
+            if (header != null)
 		    {
 				DateTimeOffset headerValue = DateTimeOffset.FromUnixTimeMilliseconds(Convert.ToInt64(header));
                 DateTimeOffset targetTime = TimeZoneInfo.ConvertTime(headerValue, TimeZoneInfo.Local);
                 headerMap.Add(GetModulesHeader.IF_MODIFIED_SINCE, targetTime);
 		    }
-		    APIResponse<Modules.ResponseHandler> response = new ModulesOperations().GetModules(headerMap);
+		    APIResponse<Modules.ResponseHandler> response = new ModulesOperations().GetModules(paramMap, headerMap);
 		    if(response != null)
 		    {
                 if (new List<int>() { Constants.NO_CONTENT_STATUS_CODE, Constants.NOT_MODIFIED_STATUS_CODE }.Contains(response.StatusCode))

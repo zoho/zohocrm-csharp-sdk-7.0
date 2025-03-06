@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Com.Zoho.Crm.API.ZiaEnrichment
 {
 
-	public class ResponseWrapper : Model
+	public class ResponseWrapper : Model, ResponseHandler
 	{
 		private List<DataEnrichment> dataEnrichment;
 		private Dictionary<string, int?> keyModified=new Dictionary<string, int?>();

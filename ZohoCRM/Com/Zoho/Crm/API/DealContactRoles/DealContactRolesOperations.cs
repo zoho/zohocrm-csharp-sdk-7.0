@@ -39,6 +39,35 @@ namespace Com.Zoho.Crm.API.DealContactRoles
 
 		}
 
+		/// <summary>The method to delete associated contact roles</summary>
+		/// <param name="deal">long?</param>
+		/// <param name="paramInstance">Instance of ParameterMap</param>
+		/// <returns>Instance of APIResponse<ActionHandler></returns>
+		public APIResponse<ActionHandler> DeleteAssociatedContactRoles(long? deal, ParameterMap paramInstance)
+		{
+			CommonAPIHandler handlerInstance=new CommonAPIHandler();
+
+			string apiPath="";
+
+			apiPath=string.Concat(apiPath, "/crm/v7/Deals/");
+
+			apiPath=string.Concat(apiPath, deal.ToString());
+
+			apiPath=string.Concat(apiPath, "/Contact_Roles");
+
+			handlerInstance.APIPath=apiPath;
+
+			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_DELETE;
+
+			handlerInstance.CategoryMethod=Constants.REQUEST_METHOD_DELETE;
+
+			handlerInstance.Param=paramInstance;
+
+			return handlerInstance.APICall<ActionHandler>(typeof(ActionHandler), "application/json");
+
+
+		}
+
 		/// <summary>The method to get associated contact roles specific to contact</summary>
 		/// <param name="contact">long?</param>
 		/// <param name="deal">long?</param>
@@ -95,7 +124,7 @@ namespace Com.Zoho.Crm.API.DealContactRoles
 
 			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_PUT;
 
-			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_CREATE;
+			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_UPDATE;
 
 			handlerInstance.ContentType="application/json";
 
@@ -108,11 +137,11 @@ namespace Com.Zoho.Crm.API.DealContactRoles
 
 		}
 
-		/// <summary>The method to delete contact role realation</summary>
+		/// <summary>The method to delete contact role relation</summary>
 		/// <param name="contact">long?</param>
 		/// <param name="deal">long?</param>
 		/// <returns>Instance of APIResponse<ActionHandler></returns>
-		public APIResponse<ActionHandler> DeleteContactRoleRealation(long? contact, long? deal)
+		public APIResponse<ActionHandler> DeleteContactRoleRelation(long? contact, long? deal)
 		{
 			CommonAPIHandler handlerInstance=new CommonAPIHandler();
 
@@ -142,6 +171,12 @@ namespace Com.Zoho.Crm.API.DealContactRoles
 		{
 			public static readonly Param<string> IDS=new Param<string>("ids", "com.zoho.crm.api.DealContactRoles.GetAssociatedContactRolesParam");
 			public static readonly Param<string> FIELDS=new Param<string>("fields", "com.zoho.crm.api.DealContactRoles.GetAssociatedContactRolesParam");
+		}
+
+
+		public static class DeleteAssociatedContactRolesParam
+		{
+			public static readonly Param<string> IDS=new Param<string>("ids", "com.zoho.crm.api.DealContactRoles.DeleteAssociatedContactRolesParam");
 		}
 
 	}

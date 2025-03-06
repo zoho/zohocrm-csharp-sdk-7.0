@@ -10,10 +10,14 @@ using AssociatedUserCount = Com.Zoho.Crm.API.UserGroups.AssociatedUserCount;
 using Info = Com.Zoho.Crm.API.UserGroups.Info;
 using ResponseHandler = Com.Zoho.Crm.API.UserGroups.ResponseHandler;
 using UserGroup = Com.Zoho.Crm.API.UserGroups.UserGroup;
+using Criteria = Com.Zoho.Crm.API.UserGroups.Criteria;
+using Field = Com.Zoho.Crm.API.UserGroups.Field;
 using UserGroupsOperations = Com.Zoho.Crm.API.UserGroups.UserGroupsOperations;
 using Com.Zoho.Crm.API.Util;
 using Com.Zoho.Crm.API.Dc;
 using Newtonsoft.Json;
+using static Com.Zoho.Crm.API.UserGroups.UserGroupsOperations;
+using Com.Zoho.Crm.API;
 
 namespace Samples.UserGroups
 {
@@ -22,7 +26,32 @@ namespace Samples.UserGroups
 		public static void GetAssociatedUsersCount_1()
 		{
 			UserGroupsOperations userGroupsOperations = new UserGroupsOperations();
-			APIResponse<ResponseHandler> response = userGroupsOperations.GetAssociatedUsersCount();
+            ParameterMap paramInstance = new ParameterMap();
+            paramInstance.Add(GetAssociatedUsersCountParam.PAGE, "1");
+            paramInstance.Add(GetAssociatedUsersCountParam.PER_PAGE, "10");
+            Criteria criteria = new Criteria();
+            criteria.GroupOperator = new Choice<String>("OR");
+            List<Criteria> group = new List<Criteria>();
+            Criteria group1 = new Criteria();
+            group1.Comparator = "equal";
+            group1.Value = "test group";
+            Field field1 = new Field();
+            field1.APIName = "name";
+            group1.Field = field1;
+            group.Add(group1);
+
+            Criteria group2 = new Criteria();
+            group2.Comparator = "equal";
+            group2.Value = "Tier2";
+            Field field2 = new Field();
+            field2.APIName = "name";
+            group2.Field = field2;
+            group.Add(group2);
+
+            criteria.Group = group;
+            paramInstance.Add(GetAssociatedUsersCountParam.FILTERS, criteria);
+
+            APIResponse<ResponseHandler> response = userGroupsOperations.GetAssociatedUsersCount(paramInstance);
 			if (response != null)
 			{
 				Console.WriteLine ("Status Code: " + response.StatusCode);

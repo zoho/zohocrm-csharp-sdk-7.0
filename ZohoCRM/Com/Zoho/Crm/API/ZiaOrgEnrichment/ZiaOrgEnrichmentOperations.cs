@@ -30,30 +30,6 @@ namespace Com.Zoho.Crm.API.ZiaOrgEnrichment
 
 		}
 
-		/// <summary>The method to get zia org enrichment</summary>
-		/// <param name="ziaOrgEnrichmentId">long?</param>
-		/// <returns>Instance of APIResponse<ResponseHandler></returns>
-		public APIResponse<ResponseHandler> GetZiaOrgEnrichment(long? ziaOrgEnrichmentId)
-		{
-			CommonAPIHandler handlerInstance=new CommonAPIHandler();
-
-			string apiPath="";
-
-			apiPath=string.Concat(apiPath, "/crm/v7/__zia_org_enrichment/");
-
-			apiPath=string.Concat(apiPath, ziaOrgEnrichmentId.ToString());
-
-			handlerInstance.APIPath=apiPath;
-
-			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_GET;
-
-			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_READ;
-
-			return handlerInstance.APICall<ResponseHandler>(typeof(ResponseHandler), "application/json");
-
-
-		}
-
 		/// <summary>The method to create zia org enrichment</summary>
 		/// <param name="request">Instance of BodyWrapper</param>
 		/// <param name="paramInstance">Instance of ParameterMap</param>
@@ -81,6 +57,30 @@ namespace Com.Zoho.Crm.API.ZiaOrgEnrichment
 			handlerInstance.Param=paramInstance;
 
 			return handlerInstance.APICall<ActionHandler>(typeof(ActionHandler), "application/json");
+
+
+		}
+
+		/// <summary>The method to get zia org enrichment</summary>
+		/// <param name="ziaOrgEnrichmentId">long?</param>
+		/// <returns>Instance of APIResponse<ResponseHandler></returns>
+		public APIResponse<ResponseHandler> GetZiaOrgEnrichment(long? ziaOrgEnrichmentId)
+		{
+			CommonAPIHandler handlerInstance=new CommonAPIHandler();
+
+			string apiPath="";
+
+			apiPath=string.Concat(apiPath, "/crm/v7/__zia_org_enrichment/");
+
+			apiPath=string.Concat(apiPath, ziaOrgEnrichmentId.ToString());
+
+			handlerInstance.APIPath=apiPath;
+
+			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_GET;
+
+			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_READ;
+
+			return handlerInstance.APICall<ResponseHandler>(typeof(ResponseHandler), "application/json");
 
 
 		}

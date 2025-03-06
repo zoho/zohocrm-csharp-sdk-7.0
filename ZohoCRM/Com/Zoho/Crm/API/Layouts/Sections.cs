@@ -18,6 +18,7 @@ namespace Com.Zoho.Crm.API.Layouts
 		private string type;
 		private List<SectionField> fields;
 		private Properties properties;
+		private Delete1 delete;
 		private Dictionary<string, int?> keyModified=new Dictionary<string, int?>();
 
 		public string DisplayLabel
@@ -256,6 +257,26 @@ namespace Com.Zoho.Crm.API.Layouts
 				 this.properties=value;
 
 				 this.keyModified["properties"] = 1;
+
+			}
+		}
+
+		public Delete1 Delete
+		{
+			/// <summary>The method to get the delete</summary>
+			/// <returns>Instance of Delete1</returns>
+			get
+			{
+				return  this.delete;
+
+			}
+			/// <summary>The method to set the value to delete</summary>
+			/// <param name="delete">Instance of Delete1</param>
+			set
+			{
+				 this.delete=value;
+
+				 this.keyModified["_delete"] = 1;
 
 			}
 		}

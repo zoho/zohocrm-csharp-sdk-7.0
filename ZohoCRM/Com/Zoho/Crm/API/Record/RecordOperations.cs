@@ -846,6 +846,41 @@ namespace Com.Zoho.Crm.API.Record
 
 		}
 
+		/// <summary>The method to get full data for rich text</summary>
+		/// <param name="id">long?</param>
+		/// <param name="paramInstance">Instance of ParameterMap</param>
+		/// <returns>Instance of APIResponse<ResponseHandler></returns>
+		public APIResponse<ResponseHandler> GetFullDataForRichText(long? id, ParameterMap paramInstance)
+		{
+			CommonAPIHandler handlerInstance=new CommonAPIHandler();
+
+			string apiPath="";
+
+			apiPath=string.Concat(apiPath, "/crm/v7/");
+
+			apiPath=string.Concat(apiPath,  this.moduleAPIName.ToString());
+
+			apiPath=string.Concat(apiPath, "/");
+
+			apiPath=string.Concat(apiPath, id.ToString());
+
+			apiPath=string.Concat(apiPath, "/actions/fetch_full_data");
+
+			handlerInstance.APIPath=apiPath;
+
+			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_GET;
+
+			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_READ;
+
+			handlerInstance.Param=paramInstance;
+
+			Utility.GetFields( this.moduleAPIName, handlerInstance);
+
+			return handlerInstance.APICall<ResponseHandler>(typeof(ResponseHandler), "application/json");
+
+
+		}
+
 		/// <summary>The method to clone record</summary>
 		/// <param name="id">long?</param>
 		/// <returns>Instance of APIResponse<ActionHandler></returns>
@@ -1007,6 +1042,7 @@ namespace Com.Zoho.Crm.API.Record
 			public static readonly Param<int?> PER_PAGE=new Param<int?>("per_page", "com.zoho.crm.api.Record.SearchRecordsParam");
 			public static readonly Param<string> FIELDS=new Param<string>("fields", "com.zoho.crm.api.Record.SearchRecordsParam");
 			public static readonly Param<string> CVID=new Param<string>("cvid", "com.zoho.crm.api.Record.SearchRecordsParam");
+			public static readonly Param<string> TYPE=new Param<string>("type", "com.zoho.crm.api.Record.SearchRecordsParam");
 		}
 
 
@@ -1030,6 +1066,7 @@ namespace Com.Zoho.Crm.API.Record
 
 		public static class RecordCountParam
 		{
+			public static readonly Param<string> CVID=new Param<string>("cvid", "com.zoho.crm.api.Record.RecordCountParam");
 			public static readonly Param<string> CRITERIA=new Param<string>("criteria", "com.zoho.crm.api.Record.RecordCountParam");
 			public static readonly Param<string> EMAIL=new Param<string>("email", "com.zoho.crm.api.Record.RecordCountParam");
 			public static readonly Param<string> PHONE=new Param<string>("phone", "com.zoho.crm.api.Record.RecordCountParam");
@@ -1073,6 +1110,12 @@ namespace Com.Zoho.Crm.API.Record
 		public static class DeleteRecordUsingExternalIDHeader
 		{
 			public static readonly Header<string> X_EXTERNAL=new Header<string>("X-EXTERNAL", "com.zoho.crm.api.Record.DeleteRecordUsingExternalIDHeader");
+		}
+
+
+		public static class GetFullDataForRichTextParam
+		{
+			public static readonly Param<string> FIELDS=new Param<string>("fields", "com.zoho.crm.api.Record.GetFullDataForRichTextParam");
 		}
 
 	}

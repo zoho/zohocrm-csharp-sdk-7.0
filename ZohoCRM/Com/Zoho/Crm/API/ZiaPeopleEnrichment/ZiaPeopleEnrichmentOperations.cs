@@ -30,30 +30,6 @@ namespace Com.Zoho.Crm.API.ZiaPeopleEnrichment
 
 		}
 
-		/// <summary>The method to get zia people enrichment</summary>
-		/// <param name="ziaPeopleEnrichmentId">long?</param>
-		/// <returns>Instance of APIResponse<ResponseHandler></returns>
-		public APIResponse<ResponseHandler> GetZiaPeopleEnrichment(long? ziaPeopleEnrichmentId)
-		{
-			CommonAPIHandler handlerInstance=new CommonAPIHandler();
-
-			string apiPath="";
-
-			apiPath=string.Concat(apiPath, "/crm/v7/__zia_people_enrichment/");
-
-			apiPath=string.Concat(apiPath, ziaPeopleEnrichmentId.ToString());
-
-			handlerInstance.APIPath=apiPath;
-
-			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_GET;
-
-			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_READ;
-
-			return handlerInstance.APICall<ResponseHandler>(typeof(ResponseHandler), "application/json");
-
-
-		}
-
 		/// <summary>The method to create zia people enrichment</summary>
 		/// <param name="request">Instance of BodyWrapper</param>
 		/// <param name="paramInstance">Instance of ParameterMap</param>
@@ -81,6 +57,30 @@ namespace Com.Zoho.Crm.API.ZiaPeopleEnrichment
 			handlerInstance.Param=paramInstance;
 
 			return handlerInstance.APICall<ActionHandler>(typeof(ActionHandler), "application/json");
+
+
+		}
+
+		/// <summary>The method to get zia people enrichment</summary>
+		/// <param name="ziaPeopleEnrichmentId">long?</param>
+		/// <returns>Instance of APIResponse<ResponseHandler></returns>
+		public APIResponse<ResponseHandler> GetZiaPeopleEnrichment(long? ziaPeopleEnrichmentId)
+		{
+			CommonAPIHandler handlerInstance=new CommonAPIHandler();
+
+			string apiPath="";
+
+			apiPath=string.Concat(apiPath, "/crm/v7/__zia_people_enrichment/");
+
+			apiPath=string.Concat(apiPath, ziaPeopleEnrichmentId.ToString());
+
+			handlerInstance.APIPath=apiPath;
+
+			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_GET;
+
+			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_READ;
+
+			return handlerInstance.APICall<ResponseHandler>(typeof(ResponseHandler), "application/json");
 
 
 		}

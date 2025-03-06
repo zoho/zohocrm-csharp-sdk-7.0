@@ -182,12 +182,12 @@ namespace Com.Zoho.Crm.API.Tags
 		}
 
 		/// <summary>The method to add tags</summary>
-		/// <param name="recordId">long?</param>
 		/// <param name="moduleAPIName">string</param>
+		/// <param name="recordId">long?</param>
 		/// <param name="request">Instance of NewTagRequestWrapper</param>
 		/// <param name="paramInstance">Instance of ParameterMap</param>
 		/// <returns>Instance of APIResponse<RecordActionHandler></returns>
-		public APIResponse<RecordActionHandler> AddTags(long? recordId, string moduleAPIName, NewTagRequestWrapper request, ParameterMap paramInstance)
+		public APIResponse<RecordActionHandler> AddTags(string moduleAPIName, long? recordId, NewTagRequestWrapper request, ParameterMap paramInstance)
 		{
 			CommonAPIHandler handlerInstance=new CommonAPIHandler();
 
@@ -223,11 +223,11 @@ namespace Com.Zoho.Crm.API.Tags
 		}
 
 		/// <summary>The method to remove tags</summary>
-		/// <param name="recordId">long?</param>
 		/// <param name="moduleAPIName">string</param>
+		/// <param name="recordId">long?</param>
 		/// <param name="request">Instance of ExistingTagRequestWrapper</param>
 		/// <returns>Instance of APIResponse<RecordActionHandler></returns>
-		public APIResponse<RecordActionHandler> RemoveTags(long? recordId, string moduleAPIName, ExistingTagRequestWrapper request)
+		public APIResponse<RecordActionHandler> RemoveTags(string moduleAPIName, long? recordId, ExistingTagRequestWrapper request)
 		{
 			CommonAPIHandler handlerInstance=new CommonAPIHandler();
 
@@ -373,6 +373,7 @@ namespace Com.Zoho.Crm.API.Tags
 		public static class CreateTagsParam
 		{
 			public static readonly Param<string> MODULE=new Param<string>("module", "com.zoho.crm.api.Tags.CreateTagsParam");
+			public static readonly Param<string> COLOR_CODE=new Param<string>("color_code", "com.zoho.crm.api.Tags.CreateTagsParam");
 		}
 
 
@@ -402,7 +403,7 @@ namespace Com.Zoho.Crm.API.Tags
 
 		public static class RemoveTagsFromMultipleRecordsParam
 		{
-			public static readonly Param<long?> IDS=new Param<long?>("ids", "com.zoho.crm.api.Tags.RemoveTagsFromMultipleRecordsParam");
+			public static readonly Param<string> IDS=new Param<string>("ids", "com.zoho.crm.api.Tags.RemoveTagsFromMultipleRecordsParam");
 		}
 
 
