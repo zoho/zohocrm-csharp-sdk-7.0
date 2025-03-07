@@ -143,7 +143,7 @@ namespace Com.Zoho.Crm.API.Pipeline
 
 			handlerInstance.APIPath=apiPath;
 
-			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_PATCH;
+			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_PUT;
 
 			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_UPDATE;
 

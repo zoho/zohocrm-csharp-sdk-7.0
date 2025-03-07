@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Com.Zoho.Crm.API.RecordLockingConfiguration
 {
 
-	public class APIException : Model, ActionResponse
+	public class APIException : Model, ActionResponse, ResponseHandler, ActionHandler
 	{
 		private Choice<string> status;
 		private Choice<string> code;

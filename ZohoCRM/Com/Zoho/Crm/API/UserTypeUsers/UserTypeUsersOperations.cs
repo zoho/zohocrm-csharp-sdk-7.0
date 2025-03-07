@@ -162,7 +162,7 @@ namespace Com.Zoho.Crm.API.UserTypeUsers
 
 		public static class GetUsersOfUserTypeParam
 		{
-			public static readonly Param<string> FILTER=new Param<string>("filter", "com.zoho.crm.api.UserTypeUsers.GetUsersOfUserTypeParam");
+			public static readonly Param<string> FILTERS=new Param<string>("filters", "com.zoho.crm.api.UserTypeUsers.GetUsersOfUserTypeParam");
 			public static readonly Param<string> TYPE=new Param<string>("type", "com.zoho.crm.api.UserTypeUsers.GetUsersOfUserTypeParam");
 		}
 

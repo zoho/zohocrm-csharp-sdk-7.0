@@ -220,6 +220,9 @@ namespace Com.Zoho.Crm.API.RecordLocking
 		public static class GetRecordLockingInformationsParam
 		{
 			public static readonly Param<string> FIELDS=new Param<string>("fields", "com.zoho.crm.api.RecordLocking.GetRecordLockingInformationsParam");
+			public static readonly Param<string> PAGE_TOKEN=new Param<string>("page_token", "com.zoho.crm.api.RecordLocking.GetRecordLockingInformationsParam");
+			public static readonly Param<int?> PAGE=new Param<int?>("page", "com.zoho.crm.api.RecordLocking.GetRecordLockingInformationsParam");
+			public static readonly Param<int?> PER_PAGE=new Param<int?>("per_page", "com.zoho.crm.api.RecordLocking.GetRecordLockingInformationsParam");
 			public static readonly Param<string> IDS=new Param<string>("ids", "com.zoho.crm.api.RecordLocking.GetRecordLockingInformationsParam");
 		}
 

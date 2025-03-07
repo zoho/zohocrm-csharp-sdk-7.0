@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Com.Zoho.Crm.API.UsersTerritories
 {
 
-	public class APIException : ActionResponse, Model, ResponseHandler, ActionHandler, ValidationHandler, TransferActionHandler
+	public class APIException : Model, ActionResponse, ResponseHandler, ActionHandler
 	{
 		private Choice<string> code;
 		private string message;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Com.Zoho.Crm.API.RecordLockingConfiguration
 {
 
-	public class ActionWrapper : Model
+	public class ActionWrapper : Model, ActionHandler
 	{
 		private List<ActionResponse> recordLockingConfigurations;
 		private Dictionary<string, int?> keyModified=new Dictionary<string, int?>();

@@ -61,6 +61,7 @@ namespace Com.Zoho.Crm.API.InventoryTemplates
 			public static readonly Param<string> CATEGORY=new Param<string>("category", "com.zoho.crm.api.InventoryTemplates.GetInventoryTemplatesParam");
 			public static readonly Param<string> SORT_BY=new Param<string>("sort_by", "com.zoho.crm.api.InventoryTemplates.GetInventoryTemplatesParam");
 			public static readonly Param<string> SORT_ORDER=new Param<string>("sort_order", "com.zoho.crm.api.InventoryTemplates.GetInventoryTemplatesParam");
+			public static readonly Param<string> FILTERS=new Param<string>("filters", "com.zoho.crm.api.InventoryTemplates.GetInventoryTemplatesParam");
 		}
 
 	}

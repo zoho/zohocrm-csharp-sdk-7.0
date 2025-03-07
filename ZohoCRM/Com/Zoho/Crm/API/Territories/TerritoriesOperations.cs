@@ -304,6 +304,7 @@ namespace Com.Zoho.Crm.API.Territories
 			public static readonly Param<string> INCLUDE=new Param<string>("include", "com.zoho.crm.api.Territories.GetTerritoriesParam");
 			public static readonly Param<int?> PAGE=new Param<int?>("page", "com.zoho.crm.api.Territories.GetTerritoriesParam");
 			public static readonly Param<int?> PER_PAGE=new Param<int?>("per_page", "com.zoho.crm.api.Territories.GetTerritoriesParam");
+			public static readonly Param<string> IDS=new Param<string>("ids", "com.zoho.crm.api.Territories.GetTerritoriesParam");
 		}
 
 
@@ -323,6 +324,8 @@ namespace Com.Zoho.Crm.API.Territories
 		public static class GetChildTerritoryParam
 		{
 			public static readonly Param<string> FILTERS=new Param<string>("filters", "com.zoho.crm.api.Territories.GetChildTerritoryParam");
+			public static readonly Param<int?> PAGE=new Param<int?>("page", "com.zoho.crm.api.Territories.GetChildTerritoryParam");
+			public static readonly Param<int?> PER_PAGE=new Param<int?>("per_page", "com.zoho.crm.api.Territories.GetChildTerritoryParam");
 		}
 
 	}

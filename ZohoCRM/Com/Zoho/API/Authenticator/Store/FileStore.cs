@@ -51,7 +51,7 @@ namespace Com.Zoho.API.Authenticator.Store
             }
             try
             {
-                string[] allContents = File.ReadAllLines(this.filePath);
+                string[] allContents = File.ReadAllLines(this.filePath).Where(line => !string.IsNullOrWhiteSpace(line)).ToArray();
                 if (allContents == null || allContents.Length < 1)
                 {
                     return null;
@@ -94,7 +94,7 @@ namespace Com.Zoho.API.Authenticator.Store
             {
                 OAuthToken oauthToken = (OAuthToken)token;
                 bool isRowPresent = false;
-                string[] lines = File.ReadAllLines(this.filePath);
+                string[] lines = File.ReadAllLines(this.filePath).Where(line => !string.IsNullOrWhiteSpace(line)).ToArray();
                 if (lines == null || lines.Length < 1)
                 {
                     return;
@@ -165,7 +165,7 @@ namespace Com.Zoho.API.Authenticator.Store
         {
             try
             {
-                string[] lines = File.ReadAllLines(this.filePath);
+                string[] lines = File.ReadAllLines(this.filePath).Where(line => !string.IsNullOrWhiteSpace(line)).ToArray();
                 if (lines == null || lines.Length < 1)
                 {
                     return;
@@ -248,7 +248,7 @@ namespace Com.Zoho.API.Authenticator.Store
         {
             try
             {
-                string[] allContents = File.ReadAllLines(this.filePath);
+                string[] allContents = File.ReadAllLines(this.filePath).Where(line => !string.IsNullOrWhiteSpace(line)).ToArray();
                 bool isRowPresent = false;
                 OAuthToken oauthToken = new OAuthToken();
                 foreach (string line in allContents)

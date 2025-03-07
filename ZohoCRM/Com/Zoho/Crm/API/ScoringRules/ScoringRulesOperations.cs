@@ -140,11 +140,10 @@ namespace Com.Zoho.Crm.API.ScoringRules
 		}
 
 		/// <summary>The method to get scoring rule</summary>
-		/// <param name="module">string</param>
 		/// <param name="id">long?</param>
 		/// <param name="paramInstance">Instance of ParameterMap</param>
 		/// <returns>Instance of APIResponse<ResponseHandler></returns>
-		public APIResponse<ResponseHandler> GetScoringRule(string module, long? id, ParameterMap paramInstance)
+		public APIResponse<ResponseHandler> GetScoringRule(long? id, ParameterMap paramInstance)
 		{
 			CommonAPIHandler handlerInstance=new CommonAPIHandler();
 

@@ -78,6 +78,30 @@ namespace Com.Zoho.Crm.API.AuditLogExport
 
 		}
 
+		/// <summary>The method to download export audit log result</summary>
+		/// <param name="downloadUrl">string</param>
+		/// <returns>Instance of APIResponse<ResponseHandler></returns>
+		public APIResponse<ResponseHandler> DownloadExportAuditLogResult(string downloadUrl)
+		{
+			CommonAPIHandler handlerInstance=new CommonAPIHandler();
+
+			string apiPath="";
+
+			apiPath=string.Concat(apiPath, "/");
+
+			apiPath=string.Concat(apiPath, downloadUrl.ToString());
+
+			handlerInstance.APIPath=apiPath;
+
+			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_GET;
+
+			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_READ;
+
+			return handlerInstance.APICall<ResponseHandler>(typeof(ResponseHandler), "application/octet-stream");
+
+
+		}
+
 
 	}
 }

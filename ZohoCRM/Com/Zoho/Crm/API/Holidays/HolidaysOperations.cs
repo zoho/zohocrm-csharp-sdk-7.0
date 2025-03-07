@@ -139,8 +139,8 @@ namespace Com.Zoho.Crm.API.Holidays
 
 		/// <summary>The method to get holiday</summary>
 		/// <param name="holidayId">long?</param>
-		/// <returns>Instance of APIResponse<ResonseHandler></returns>
-		public APIResponse<ResonseHandler> GetHoliday(long? holidayId)
+		/// <returns>Instance of APIResponse<ResponseHandler></returns>
+		public APIResponse<ResponseHandler> GetHoliday(long? holidayId)
 		{
 			CommonAPIHandler handlerInstance=new CommonAPIHandler();
 
@@ -158,7 +158,7 @@ namespace Com.Zoho.Crm.API.Holidays
 
 			handlerInstance.AddHeader(new Header<string>("X-CRM-ORG", "com.zoho.crm.api.Holidays.GetHolidayHeader"),  this.xCrmOrg);
 
-			return handlerInstance.APICall<ResonseHandler>(typeof(ResonseHandler), "application/json");
+			return handlerInstance.APICall<ResponseHandler>(typeof(ResponseHandler), "application/json");
 
 
 		}

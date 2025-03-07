@@ -7,7 +7,7 @@ using System.Collections.Generic;
 namespace Com.Zoho.Crm.API.EmailTemplates
 {
 
-	public class EmailTemplate : InventoryTemplates.InventoryTemplates , Model, Template
+	public class EmailTemplate : InventoryTemplates.InventoryTemplates , Template, Model
 	{
 		private List<Attachment> attachments;
 		private string subject;

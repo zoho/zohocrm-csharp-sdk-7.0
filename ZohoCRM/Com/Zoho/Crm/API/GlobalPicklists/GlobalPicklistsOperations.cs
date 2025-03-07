@@ -153,7 +153,7 @@ namespace Com.Zoho.Crm.API.GlobalPicklists
 
 			handlerInstance.APIPath=apiPath;
 
-			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_PUT;
+			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_PATCH;
 
 			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_UPDATE;
 

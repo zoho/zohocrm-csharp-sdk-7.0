@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Com.Zoho.Crm.API.Layouts
 {
 
-	public class APIException : Model, ResponseHandler
+	public class APIException : Model, ResponseHandler, ActionHandler, ActionResponse
 	{
 		private Choice<string> code;
 		private Choice<string> message;

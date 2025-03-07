@@ -8,9 +8,10 @@ namespace Com.Zoho.Crm.API.Modules
 	public class ModulesOperations
 	{
 		/// <summary>The method to get modules</summary>
+		/// <param name="paramInstance">Instance of ParameterMap</param>
 		/// <param name="headerInstance">Instance of HeaderMap</param>
 		/// <returns>Instance of APIResponse<ResponseHandler></returns>
-		public APIResponse<ResponseHandler> GetModules(HeaderMap headerInstance)
+		public APIResponse<ResponseHandler> GetModules(ParameterMap paramInstance, HeaderMap headerInstance)
 		{
 			CommonAPIHandler handlerInstance=new CommonAPIHandler();
 
@@ -24,9 +25,39 @@ namespace Com.Zoho.Crm.API.Modules
 
 			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_READ;
 
+			handlerInstance.Param=paramInstance;
+
 			handlerInstance.Header=headerInstance;
 
 			return handlerInstance.APICall<ResponseHandler>(typeof(ResponseHandler), "application/json");
+
+
+		}
+
+		/// <summary>The method to create custom modules</summary>
+		/// <param name="request">Instance of BodyWrapper</param>
+		/// <returns>Instance of APIResponse<ActionHandler></returns>
+		public APIResponse<ActionHandler> CreateCustomModules(BodyWrapper request)
+		{
+			CommonAPIHandler handlerInstance=new CommonAPIHandler();
+
+			string apiPath="";
+
+			apiPath=string.Concat(apiPath, "/crm/v7/settings/modules");
+
+			handlerInstance.APIPath=apiPath;
+
+			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_POST;
+
+			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_CREATE;
+
+			handlerInstance.ContentType="application/json";
+
+			handlerInstance.Request=request;
+
+			handlerInstance.MandatoryChecker=true;
+
+			return handlerInstance.APICall<ActionHandler>(typeof(ActionHandler), "application/json");
 
 
 		}
@@ -137,6 +168,12 @@ namespace Com.Zoho.Crm.API.Modules
 			return handlerInstance.APICall<ActionHandler>(typeof(ActionHandler), "application/json");
 
 
+		}
+
+
+		public static class GetModulesParam
+		{
+			public static readonly Param<Choice<string>> STATUS=new Param<Choice<string>>("status", "com.zoho.crm.api.Modules.GetModulesParam");
 		}
 
 

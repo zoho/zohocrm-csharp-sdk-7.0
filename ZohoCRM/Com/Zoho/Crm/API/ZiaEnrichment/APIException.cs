@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Com.Zoho.Crm.API.ZiaEnrichment
 {
 
-	public class APIException : Model, ActionResponse, ScrapyActionResponse
+	public class APIException : Model, ActionResponse, ScrapyActionResponse, ResponseHandler
 	{
 		private Choice<string> code;
 		private Dictionary<string, object> details;

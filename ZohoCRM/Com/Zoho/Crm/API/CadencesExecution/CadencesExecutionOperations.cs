@@ -5,11 +5,11 @@ namespace Com.Zoho.Crm.API.CadencesExecution
 
 	public class CadencesExecutionOperations
 	{
-		/// <summary>The method to enrol cadences</summary>
+		/// <summary>The method to enroll cadences</summary>
 		/// <param name="module">string</param>
 		/// <param name="request">Instance of BodyWrapper</param>
 		/// <returns>Instance of APIResponse<ActionHandler></returns>
-		public APIResponse<ActionHandler> EnrolCadences(string module, BodyWrapper request)
+		public APIResponse<ActionHandler> EnrollCadences(string module, BodyWrapper request)
 		{
 			CommonAPIHandler handlerInstance=new CommonAPIHandler();
 
@@ -36,11 +36,11 @@ namespace Com.Zoho.Crm.API.CadencesExecution
 
 		}
 
-		/// <summary>The method to unenrol cadences</summary>
+		/// <summary>The method to unenroll cadences</summary>
 		/// <param name="module">string</param>
 		/// <param name="request">Instance of BodyWrapper</param>
 		/// <returns>Instance of APIResponse<ActionHandler></returns>
-		public APIResponse<ActionHandler> UnenrolCadences(string module, BodyWrapper request)
+		public APIResponse<ActionHandler> UnenrollCadences(string module, BodyWrapper request)
 		{
 			CommonAPIHandler handlerInstance=new CommonAPIHandler();
 

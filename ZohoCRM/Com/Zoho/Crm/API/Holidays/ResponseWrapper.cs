@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Com.Zoho.Crm.API.Holidays
 {
 
-	public class ResponseWrapper : Model, ResponseHandler, ResonseHandler
+	public class ResponseWrapper : Model, ResponseHandler
 	{
 		private List<Holiday> holidays;
 		private Info info;

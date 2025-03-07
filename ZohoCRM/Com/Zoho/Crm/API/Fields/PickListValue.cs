@@ -12,12 +12,16 @@ namespace Com.Zoho.Crm.API.Fields
 		private long? id;
 		private int? sequenceNumber;
 		private string displayValue;
+		private string referenceValue;
+		private string dealCategory;
 		private int? probability;
 		private ForecastCategory forecastCategory;
 		private string expectedDataType;
 		private string sysRefName;
 		private string forecastType;
 		private List<Maps> maps;
+		private bool? delete;
+		private bool? showValue;
 		private Dictionary<string, int?> keyModified=new Dictionary<string, int?>();
 
 		public string ColourCode
@@ -140,6 +144,46 @@ namespace Com.Zoho.Crm.API.Fields
 			}
 		}
 
+		public string ReferenceValue
+		{
+			/// <summary>The method to get the referenceValue</summary>
+			/// <returns>string representing the referenceValue</returns>
+			get
+			{
+				return  this.referenceValue;
+
+			}
+			/// <summary>The method to set the value to referenceValue</summary>
+			/// <param name="referenceValue">string</param>
+			set
+			{
+				 this.referenceValue=value;
+
+				 this.keyModified["reference_value"] = 1;
+
+			}
+		}
+
+		public string DealCategory
+		{
+			/// <summary>The method to get the dealCategory</summary>
+			/// <returns>string representing the dealCategory</returns>
+			get
+			{
+				return  this.dealCategory;
+
+			}
+			/// <summary>The method to set the value to dealCategory</summary>
+			/// <param name="dealCategory">string</param>
+			set
+			{
+				 this.dealCategory=value;
+
+				 this.keyModified["deal_category"] = 1;
+
+			}
+		}
+
 		public int? Probability
 		{
 			/// <summary>The method to get the probability</summary>
@@ -256,6 +300,46 @@ namespace Com.Zoho.Crm.API.Fields
 				 this.maps=value;
 
 				 this.keyModified["maps"] = 1;
+
+			}
+		}
+
+		public bool? Delete
+		{
+			/// <summary>The method to get the delete</summary>
+			/// <returns>bool? representing the delete</returns>
+			get
+			{
+				return  this.delete;
+
+			}
+			/// <summary>The method to set the value to delete</summary>
+			/// <param name="delete">bool?</param>
+			set
+			{
+				 this.delete=value;
+
+				 this.keyModified["_delete"] = 1;
+
+			}
+		}
+
+		public bool? ShowValue
+		{
+			/// <summary>The method to get the showValue</summary>
+			/// <returns>bool? representing the showValue</returns>
+			get
+			{
+				return  this.showValue;
+
+			}
+			/// <summary>The method to set the value to showValue</summary>
+			/// <param name="showValue">bool?</param>
+			set
+			{
+				 this.showValue=value;
+
+				 this.keyModified["show_value"] = 1;
 
 			}
 		}

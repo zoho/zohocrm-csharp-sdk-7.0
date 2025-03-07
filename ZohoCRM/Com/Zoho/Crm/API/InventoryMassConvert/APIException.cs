@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Com.Zoho.Crm.API.InventoryMassConvert
 {
 
-	public class APIException : Model
+	public class APIException : Model, ActionResponse, ResponseHandler
 	{
 		private Choice<string> code;
 		private Dictionary<string, object> details;

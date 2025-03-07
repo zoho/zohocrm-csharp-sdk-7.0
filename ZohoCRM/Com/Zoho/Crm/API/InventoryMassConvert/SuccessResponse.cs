@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace Com.Zoho.Crm.API.InventoryMassConvert
 {
 
-	public class SuccessResponse : Model
+	public class SuccessResponse : Model, ActionResponse
 	{
 		private Choice<string> code;
 		private Choice<string> message;

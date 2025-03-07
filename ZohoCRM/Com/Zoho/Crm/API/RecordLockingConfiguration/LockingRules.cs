@@ -10,6 +10,7 @@ namespace Com.Zoho.Crm.API.RecordLockingConfiguration
 		private long? id;
 		private bool? lockExistingRecords;
 		private Criteria criteria;
+		private bool? delete;
 		private Dictionary<string, int?> keyModified=new Dictionary<string, int?>();
 
 		public string Name
@@ -88,6 +89,26 @@ namespace Com.Zoho.Crm.API.RecordLockingConfiguration
 				 this.criteria=value;
 
 				 this.keyModified["criteria"] = 1;
+
+			}
+		}
+
+		public bool? Delete
+		{
+			/// <summary>The method to get the delete</summary>
+			/// <returns>bool? representing the delete</returns>
+			get
+			{
+				return  this.delete;
+
+			}
+			/// <summary>The method to set the value to delete</summary>
+			/// <param name="delete">bool?</param>
+			set
+			{
+				 this.delete=value;
+
+				 this.keyModified["_delete"] = 1;
 
 			}
 		}

@@ -1,3 +1,4 @@
+using Com.Zoho.Crm.API;
 using Com.Zoho.Crm.API.Util;
 
 namespace Com.Zoho.Crm.API.UsersTerritories
@@ -74,6 +75,34 @@ namespace Com.Zoho.Crm.API.UsersTerritories
 
 		}
 
+		/// <summary>The method to remove territories from user</summary>
+		/// <param name="paramInstance">Instance of ParameterMap</param>
+		/// <returns>Instance of APIResponse<ActionHandler></returns>
+		public APIResponse<ActionHandler> RemoveTerritoriesFromUser(ParameterMap paramInstance)
+		{
+			CommonAPIHandler handlerInstance=new CommonAPIHandler();
+
+			string apiPath="";
+
+			apiPath=string.Concat(apiPath, "/crm/v7/users/");
+
+			apiPath=string.Concat(apiPath,  this.user.ToString());
+
+			apiPath=string.Concat(apiPath, "/territories");
+
+			handlerInstance.APIPath=apiPath;
+
+			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_DELETE;
+
+			handlerInstance.CategoryMethod=Constants.REQUEST_METHOD_DELETE;
+
+			handlerInstance.Param=paramInstance;
+
+			return handlerInstance.APICall<ActionHandler>(typeof(ActionHandler), "application/json");
+
+
+		}
+
 		/// <summary>The method to get territory of user</summary>
 		/// <param name="territory">long?</param>
 		/// <returns>Instance of APIResponse<ResponseHandler></returns>
@@ -102,35 +131,10 @@ namespace Com.Zoho.Crm.API.UsersTerritories
 
 		}
 
-		/// <summary>The method to validate before transfer for all territories</summary>
-		/// <returns>Instance of APIResponse<ValidationHandler></returns>
-		public APIResponse<ValidationHandler> ValidateBeforeTransferForAllTerritories()
-		{
-			CommonAPIHandler handlerInstance=new CommonAPIHandler();
-
-			string apiPath="";
-
-			apiPath=string.Concat(apiPath, "/crm/v7/users/");
-
-			apiPath=string.Concat(apiPath,  this.user.ToString());
-
-			apiPath=string.Concat(apiPath, "/territories/actions/validate_before_transfer");
-
-			handlerInstance.APIPath=apiPath;
-
-			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_GET;
-
-			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_ACTION;
-
-			return handlerInstance.APICall<ValidationHandler>(typeof(ValidationHandler), "application/json");
-
-
-		}
-
-		/// <summary>The method to validate before transfer</summary>
+		/// <summary>The method to remove territory from user</summary>
 		/// <param name="territory">long?</param>
-		/// <returns>Instance of APIResponse<ValidationHandler></returns>
-		public APIResponse<ValidationHandler> ValidateBeforeTransfer(long? territory)
+		/// <returns>Instance of APIResponse<ActionHandler></returns>
+		public APIResponse<ActionHandler> RemoveTerritoryFromUser(long? territory)
 		{
 			CommonAPIHandler handlerInstance=new CommonAPIHandler();
 
@@ -144,84 +148,22 @@ namespace Com.Zoho.Crm.API.UsersTerritories
 
 			apiPath=string.Concat(apiPath, territory.ToString());
 
-			apiPath=string.Concat(apiPath, "/actions/validate_before_transfer");
-
 			handlerInstance.APIPath=apiPath;
 
-			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_GET;
+			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_DELETE;
 
-			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_ACTION;
+			handlerInstance.CategoryMethod=Constants.REQUEST_METHOD_DELETE;
 
-			return handlerInstance.APICall<ValidationHandler>(typeof(ValidationHandler), "application/json");
+			return handlerInstance.APICall<ActionHandler>(typeof(ActionHandler), "application/json");
 
 
 		}
 
-		/// <summary>The method to delink and transfer from all territories</summary>
-		/// <param name="request">Instance of TransferWrapper</param>
-		/// <returns>Instance of APIResponse<TransferActionHandler></returns>
-		public APIResponse<TransferActionHandler> DelinkAndTransferFromAllTerritories(TransferWrapper request)
+
+		public static class RemoveTerritoriesFromUserParam
 		{
-			CommonAPIHandler handlerInstance=new CommonAPIHandler();
-
-			string apiPath="";
-
-			apiPath=string.Concat(apiPath, "/crm/v7/users/");
-
-			apiPath=string.Concat(apiPath,  this.user.ToString());
-
-			apiPath=string.Concat(apiPath, "/territories/actions/transfer_and_delink");
-
-			handlerInstance.APIPath=apiPath;
-
-			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_PUT;
-
-			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_ACTION;
-
-			handlerInstance.ContentType="application/json";
-
-			handlerInstance.Request=request;
-
-			return handlerInstance.APICall<TransferActionHandler>(typeof(TransferActionHandler), "application/json");
-
-
+			public static readonly Param<string> IDS=new Param<string>("ids", "com.zoho.crm.api.UsersTerritories.RemoveTerritoriesFromUserParam");
 		}
-
-		/// <summary>The method to delink and transfer from specific territory</summary>
-		/// <param name="territory">long?</param>
-		/// <param name="request">Instance of TransferWrapper</param>
-		/// <returns>Instance of APIResponse<TransferActionHandler></returns>
-		public APIResponse<TransferActionHandler> DelinkAndTransferFromSpecificTerritory(long? territory, TransferWrapper request)
-		{
-			CommonAPIHandler handlerInstance=new CommonAPIHandler();
-
-			string apiPath="";
-
-			apiPath=string.Concat(apiPath, "/crm/v7/users/");
-
-			apiPath=string.Concat(apiPath,  this.user.ToString());
-
-			apiPath=string.Concat(apiPath, "/territories/");
-
-			apiPath=string.Concat(apiPath, territory.ToString());
-
-			apiPath=string.Concat(apiPath, "/actions/transfer_and_delink");
-
-			handlerInstance.APIPath=apiPath;
-
-			handlerInstance.HttpMethod=Constants.REQUEST_METHOD_PUT;
-
-			handlerInstance.CategoryMethod=Constants.REQUEST_CATEGORY_ACTION;
-
-			handlerInstance.ContentType="application/json";
-
-			handlerInstance.Request=request;
-
-			return handlerInstance.APICall<TransferActionHandler>(typeof(TransferActionHandler), "application/json");
-
-
-		}
-
 
 	}
 }

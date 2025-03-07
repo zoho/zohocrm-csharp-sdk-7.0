@@ -6,26 +6,25 @@ namespace Com.Zoho.Crm.API.UsersTerritories
 
 	public class ActionWrapper : Model, ActionHandler
 	{
-		private List<ActionResponse> transferAndDelink;
-		private Dictionary<string, int?> keyModified=new Dictionary<string, int?>();
 		private List<ActionResponse> territories;
+		private Dictionary<string, int?> keyModified=new Dictionary<string, int?>();
 
-		public List<ActionResponse> TransferAndDelink
+		public List<ActionResponse> Territories
 		{
-			/// <summary>The method to get the transferAndDelink</summary>
+			/// <summary>The method to get the territories</summary>
 			/// <returns>Instance of List<ActionResponse></returns>
 			get
 			{
-				return  this.transferAndDelink;
+				return  this.territories;
 
 			}
-			/// <summary>The method to set the value to transferAndDelink</summary>
-			/// <param name="transferAndDelink">Instance of List<ActionResponse></param>
+			/// <summary>The method to set the value to territories</summary>
+			/// <param name="territories">Instance of List<ActionResponse></param>
 			set
 			{
-				 this.transferAndDelink=value;
+				 this.territories=value;
 
-				 this.keyModified["transfer_and_delink"] = 1;
+				 this.keyModified["territories"] = 1;
 
 			}
 		}
@@ -53,26 +52,6 @@ namespace Com.Zoho.Crm.API.UsersTerritories
 			 this.keyModified[key] = modification;
 
 
-		}
-
-		public List<ActionResponse> Territories
-		{
-			/// <summary>The method to get the territories</summary>
-			/// <returns>Instance of List<ActionResponse></returns>
-			get
-			{
-				return  this.territories;
-
-			}
-			/// <summary>The method to set the value to territories</summary>
-			/// <param name="territories">Instance of List<ActionResponse></param>
-			set
-			{
-				 this.territories=value;
-
-				 this.keyModified["territories"] = 1;
-
-			}
 		}
 
 

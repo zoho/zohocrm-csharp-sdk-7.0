@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Com.Zoho.Crm.API.InventoryTemplates
 {
 
-	public class InventoryTemplates : Model, Template
+	public class InventoryTemplates : Template, Model
 	{
 		private DateTimeOffset? createdTime;
 		private DateTimeOffset? modifiedTime;

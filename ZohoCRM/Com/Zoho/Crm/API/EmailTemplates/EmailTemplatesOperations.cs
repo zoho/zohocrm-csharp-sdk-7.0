@@ -58,6 +58,10 @@ namespace Com.Zoho.Crm.API.EmailTemplates
 		public static class GetEmailTemplatesParam
 		{
 			public static readonly Param<string> MODULE=new Param<string>("module", "com.zoho.crm.api.EmailTemplates.GetEmailTemplatesParam");
+			public static readonly Param<string> CATEGORY=new Param<string>("category", "com.zoho.crm.api.EmailTemplates.GetEmailTemplatesParam");
+			public static readonly Param<string> SORT_BY=new Param<string>("sort_by", "com.zoho.crm.api.EmailTemplates.GetEmailTemplatesParam");
+			public static readonly Param<string> SORT_ORDER=new Param<string>("sort_order", "com.zoho.crm.api.EmailTemplates.GetEmailTemplatesParam");
+			public static readonly Param<string> FILTERS=new Param<string>("filters", "com.zoho.crm.api.EmailTemplates.GetEmailTemplatesParam");
 		}
 
 	}
