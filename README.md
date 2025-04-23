@@ -25,7 +25,7 @@ License
 
 ## Latest Version
 
-- [5.0.0](/versions/5.0.0/README.md)
+- [5.0.0](/versions/5.0.0/ZohoCRM/README.md)
 
   - Added new **page_token** param in **GetAttachmentsParam** class.
   - **CadencesExecutionOperations** class method name changed(**EnrolCadences** to **EnrollCadences**).
@@ -98,19 +98,19 @@ License
     - ZiaEnrichment
       - [Enrichment Configuration](https://www.zoho.com/crm/developer/docs/api/v7/zia-enrichment/get-config.html)
 
-- [4.0.0](/versions/4.0.0/README.md)
+- [4.0.0](/versions/4.0.0/ZohoCRM/README.md)
 
     - Updated the CADataCenter Accounts URL
 
-- [3.0.0](/versions/3.0.0/README.md)
+- [3.0.0](/versions/3.0.0/ZohoCRM/README.md)
 
     - Handle "text/plain" content type as file download.
 
-- [2.0.0](/versions/2.0.0/README.md)
+- [2.0.0](/versions/2.0.0/ZohoCRM/README.md)
 
     - Handled Error Structure in MassDeleteTags API.
 
-- [1.0.0](/versions/1.0.0/README.md)
+- [1.0.0](/versions/1.0.0/ZohoCRM/README.md)
 
     - C# SDK upgraded to support v7 APIs.
 
